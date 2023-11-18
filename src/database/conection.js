@@ -3,7 +3,7 @@ import sql from "mssql";
 const dbSettings = {
     user: "Jhonn",
     password : "qwerty",
-    server : "Local",
+    server : "localhost",
     database: "hospital",
     options:{
         encrytp: true,
@@ -16,8 +16,9 @@ async function getConnection(){
     //se conecta a traves de los parametros al SQL
     const pool = await sql.connect(dbSettings)
     //que ejecute esto dentro la base de datos
-    const resutl = await pool.request().query("SELECT 1");
-    console.log(result);  
+    const result = await pool.request().query("SELECT 1");
+   console.log(result);
 }
+
 
 getConnection();
