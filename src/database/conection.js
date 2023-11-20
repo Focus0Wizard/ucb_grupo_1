@@ -1,10 +1,11 @@
 import sql from "mssql";
+import config from "../config";
 
 const dbSettings = {
-    user: "Jhonn",
-    password : "qwerty",
-    server : "localhost",
-    database: "hospital",
+    user: config.dbUser,
+    password : config.dbPassword,
+    server : config.dbServer,
+    database: config.dbDataBase,
     options:{
         encrytp: true,
     trustServerCertificate : true
@@ -12,13 +13,13 @@ const dbSettings = {
 }
 
 //aca ponemos en donde esta la base de datos
-async function getConnection(){
-    //se conecta a traves de los parametros al SQL
-    const pool = await sql.connect(dbSettings)
-    //que ejecute esto dentro la base de datos
-    const result = await pool.request().query("SELECT 1");
-   console.log(result);
+export async function getConnection(){
+    try{
+        const pool = await sql.connect(dbSettings);
+        return pool;
+    }catch(error){
+        console.error(error);
+    }
 }
 
-
-getConnection();
+export { sql };
