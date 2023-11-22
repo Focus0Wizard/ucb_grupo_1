@@ -1,0 +1,19 @@
+
+@api = http://localhost:3000/Medico
+
+###Mostrar todos los doctores en la tabla
+get {{api}}
+
+###Aniandir un nuevo doctor
+POST {{api}}
+
+Content-Type: application/json
+
+{
+    "ID_Medico" : "2",
+    "Nombre" : "Victor",
+    "Apellido" : "Garcia",
+    "Especialidad" : "Pulmonologo",
+    "Telefono" : "7546123",
+    "Correo_Electronico" : "fer@gmail.com"
+}

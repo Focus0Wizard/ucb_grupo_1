@@ -8,6 +8,7 @@ exports.updatePatientById = exports.getTotalPatient = exports.getPatientById = e
 var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
 var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
 var _database = require("../database");
+var _querys = require("../database/querys");
 var getGeneral = exports.getGeneral = /*#__PURE__*/function () {
   var _ref = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(req, res) {
     var pool, result;
@@ -20,7 +21,7 @@ var getGeneral = exports.getGeneral = /*#__PURE__*/function () {
         case 3:
           pool = _context.sent;
           _context.next = 6;
-          return pool.request().query(_database.querys.GetAllPatients);
+          return pool.request().query(_querys.querysPatient.GetAllPatients);
         case 6:
           result = _context.sent;
           res.json(result.recordset);
@@ -64,7 +65,7 @@ var addNewPatient = exports.addNewPatient = /*#__PURE__*/function () {
         case 8:
           pool = _context2.sent;
           _context2.next = 11;
-          return pool.request().input("ID_Paciente", _database.sql.Int, ID_Paciente).input("Nombre", _database.sql.VarChar, Nombre).input("Apellido", _database.sql.VarChar, Apellido).input("Genero", _database.sql.Char, Genero).input("Fecha_Nacimiento", _database.sql.Date, Fecha_Nacimiento).input("Direccion", _database.sql.VarChar, Direccion).input("Telefono", _database.sql.Int, Telefono).input("Correo_Electronico", _database.sql.VarChar, Correo_Electronico).input("ID_Aseguradora", _database.sql.Int, ID_Aseguradora).query(_database.querys.AddPatient);
+          return pool.request().input("ID_Paciente", _database.sql.Int, ID_Paciente).input("Nombre", _database.sql.VarChar, Nombre).input("Apellido", _database.sql.VarChar, Apellido).input("Genero", _database.sql.Char, Genero).input("Fecha_Nacimiento", _database.sql.Date, Fecha_Nacimiento).input("Direccion", _database.sql.VarChar, Direccion).input("Telefono", _database.sql.Int, Telefono).input("Correo_Electronico", _database.sql.VarChar, Correo_Electronico).input("ID_Aseguradora", _database.sql.Int, ID_Aseguradora).query(_database.querys.addNewPatient);
         case 11:
           res.json({
             ID_Paciente: ID_Paciente,

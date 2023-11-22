@@ -1,28 +1,29 @@
 
 @api = http://localhost:3000/Paciente
 ###Mostrar toda la tabla de pacientes
-GET {{api}}
-###Aniadir un nuevo paciente
-POST {{api}}
+get {{api}}
+###Hacer el post de un nuevo paciente en la tabla
+post {{api}}
+
 Content-Type: application/json
 
 {
-    "ID_Paciente" : "6",
-    "Nombre" : "Adrian",
-    "Apellido" : "Rojas",
-    "Genero" : "M",
-    "Fecha_Nacimiento" : "2003-11-23",
-    "Direccion" : "Tiqui",
-    "Telefono" : "34372",
-    "Correo_Electronico" : "Adri@gmail.com",
+    "ID_Paciente" : "2",
+    "Nombre" : "Douglas",
+    "Apellido" : "Padilla",
+    "Genero" : "M", 
+    "Fecha_Nacimiento" : "2003-10-14",
+    "Direccion" : "Sacaba",
+    "Telefono" : "324234",
+    "Correo_Electronico" : "Cami@gmail.com",
     "ID_Aseguradora" : "4" 
 }
 
 ###Search de un paciente segun el ID que ingrese
-GET {{api}}/3
+GET {{api}}/2
 
 ###Delete un paciente segun el ID que le pasemos
-DELETE {{api}}/1
+DELETE {{api}}/2
 
 ### get Total Pacientes
 GET {{api}}/count
@@ -33,13 +34,13 @@ PUT {{api}}/2
 Content-Type: application/json
 
 {
-    "ID_Paciente" : "2",
+    "ID_Paciente" : 2,
     "Nombre" : "Douglas",
     "Apellido" : "Padilla",
-    "Genero" : "M",
+    "Genero" : "M", 
     "Fecha_Nacimiento" : "2003-10-14",
     "Direccion" : "Sacaba",
-    "Telefono" : "324234",
+    "Telefono" : 324234,
     "Correo_Electronico" : "Cami@gmail.com",
-    "ID_Aseguradora" : "4" 
+    "ID_Aseguradora" : 4 
 }

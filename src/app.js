@@ -1,7 +1,9 @@
 import express from 'express'
 import config from './config'
 
-import generalRoutes from './routes/general.routes'
+import patientRoutes from './routes/patient.routes'
+import doctorRoutes from './routes/doctor.routes'
+import aseguradoraRoutes from './routes/aseguradora.routes'
 
 const app = express()
 
@@ -12,6 +14,8 @@ app.set('port',config.port)
 app.use(express.json())
 app.use(express.urlencoded({ extended : false}))
 
-app.use(generalRoutes)
+app.use(patientRoutes) , 
+app.use(doctorRoutes) , 
+app.use(aseguradoraRoutes)
 
 export default app

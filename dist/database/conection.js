@@ -14,11 +14,12 @@ Object.defineProperty(exports, "sql", {
 var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
 var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
 var _mssql = _interopRequireDefault(require("mssql"));
+var _config = _interopRequireDefault(require("../config"));
 var dbSettings = {
-  user: "Jhonn",
-  password: "qwerty",
-  server: "localhost",
-  database: "hospital",
+  user: _config["default"].dbUser,
+  password: _config["default"].dbPassword,
+  server: _config["default"].dbServer,
+  database: _config["default"].dbDataBase,
   options: {
     encrytp: true,
     trustServerCertificate: true
